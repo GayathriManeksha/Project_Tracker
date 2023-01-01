@@ -19,3 +19,5 @@ newenv.bak/
 env.bak/
 venv.bak/
 env
+
+psql.py

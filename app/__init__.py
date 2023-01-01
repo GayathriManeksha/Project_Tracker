@@ -1,10 +1,23 @@
 from flask import Flask
-from pymongo import MongoClient
+from flask_sqlalchemy import SQLAlchemy
+import psycopg2
 
 app = Flask(__name__)   
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Gaya@123@localhost/students'
+database = "postgres"
+username = "postgres"
+password = "Gaya"
+host = "127.0.0.1"
+app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql://{username}:{password}@{host}:5432/{database}"
+# app.config["SQLALCHEMY_DATABASE_URI"] = psycopg2.connect(
+#     database="postgres",
+#     user="postgres",
+#     password="Gaya@123",
+#     host="127.0.0.1",
+#     port=5432,
+# )
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.secret_key = 'secret string'
+db=SQLAlchemy(app)
 import psycopg2
 
 def get_connection():
@@ -18,12 +31,5 @@ def get_connection():
 		)
 	except:
 		return False
-
-conn = get_connection()
-
-if conn:
-	print("Connection to the PostgreSQL established successfully.")
-else:
-	print("Connection to the PostgreSQL encountered and error.")
 
 from app import routes
