@@ -1,0 +1,73 @@
+.div3{
+    margin-left: 3rem;
+    display: grid;    
+    grid-template-columns: auto auto; 
+    row-gap: 20px;
+    column-gap: 1px;  
+}
+.div1{
+    height: 100vh;
+    width: 100vh;  
+}
+.div2{
+    height: 100vh;
+    width: 100vh;  
+}
+.a{
+    background-color:  rgb(197, 170, 222);
+    width: 12rem;
+    height: 2rem; 
+    border-radius: 6%;
+}
+.b{
+    background-color: rgb(197, 170, 222);
+    width: 18rem;
+    height: 2rem; 
+    border-radius: 6%;
+}
+.add{
+    background-color: rgb(197, 170, 222);
+    width: 6rem;
+    height: 1.75rem;
+    border-color: transparent;
+    border-radius: 1rem;
+    margin-left: 33rem;
+}
+.body{
+    display: flex;    
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+.container { 
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    
+    background-color: rgb(197, 170, 222);
+}
+input[type=text], input[type=password] {
+    box-sizing: border-box; 
+    width: 500px;
+    height: 35px; 
+    
+    border: 2px solid black;
+    border-radius: 10px;
+    background: none;
+}
+.save{ 
+    width: 50px;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background: none;
+    margin-left: 1rem;
+    margin-top: 1rem;
+
+}
