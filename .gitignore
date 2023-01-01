@@ -1,0 +1,21 @@
+#db
+*.sqlite3
+
+__pycache__/
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Environments
+.newenv
+.env
+.venv
+newenv/
+env/
+venv/
+ENV/
+newenv.bak/
+env.bak/
+venv.bak/
+env
