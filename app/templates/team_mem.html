@@ -8,28 +8,33 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="{{request.path}}" method="post">
     <b><h1 class="hd">DETAILS</h1></b>
     <div class="container1">
     <label for="name"><b>Name</b></label>
-    <input class="in"type="text" value="FName " name="name" required>
+    <input class="in"type="text" value="{{user.username}}" name="name" required>
     <br/><br/><br/><br/>
     <label for="address"><b>Address</b></label>
-    <input class="in"type="text" value="Address" name="address" required>
+    <input class="in"type="text" value="{{user.address}}" name="address" required>
     <br/><br/><br/><br/>
     <label for="phno"><b>Phone Number</b></label>
-    <input class="in" type="text" value="8888888888" name="phno" required>
+    <input class="in" type="text" value="{{user.ph_no}}" name="phno" required>
     <br/><br/><br/><br/>
     <label for="part"><b>Part in the project</b></label>
-    <input class="in" type="text" value="xxx" name="part" required>
+    <input class="in" type="text" value="{{user.part}}" name="part" required>
     <br/><br/><br/><br/>
     </div>
     <div class="container2">
     <label for="tasks"><b><h1>Tasks</h1></b></label>
     <!-- <label for="task1"><b>Task 1</b></label> -->
-    <input class="in2" type="text" value="Task 1" name="part" readonly>
-    <input type="checkbox" class="CB"/>
-    </div>
+    {% for t in task %}
+        <div class="big-checkbox" style="height:30px">
+            <input class="form-check-input" type="checkbox" {{'checked="checked"' if t.status else ""}} id="inlineCheckbox1" name="sel_items"
+                value="{{t.id}}">
+            <label class="form-check-label" for="inlineCheckbox1">{{t.task_desc}}</label>
+        </div>
+    {% endfor %}
     <button class="submitt">SUBMIT</button>
-    
+    </form>
 </body>
 </html>
