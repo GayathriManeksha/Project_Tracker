@@ -8,10 +8,12 @@ def login():
     if request.method == 'POST':
         user_name = request.form.get('uname') 
         password = request.form.get('psw')
-        if user_name == 'Admin':
-            return redirect(url_for('view_progress'))
-        else:
-            return redirect(url_for('add_details',user_name=user_name))
+        data = userLogin.query.get(user_name)
+        if data and password == data.passwrd:
+            if user_name == 'Admin':
+                return redirect(url_for('view_progress'))
+            else:
+                return redirect(url_for('add_details',user_name=user_name))
     return render_template('login.html')
 
 
