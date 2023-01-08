@@ -36,29 +36,31 @@
         <div class="col">
           <h3><b>Member</b></h3>
         </div>
-        <div class="col">
+        <!-- <div class="col">
           <h3><b>Progress</b></h3>
         </div>
         <div class="col">
           <h3><b>Status</b></h3>
-        </div>
+        </div> -->
       </div>
     </div>
 
     {% for d in data%}
+    {% if d['username'] !='Admin' %}
     <div class="container overflow-hidden" id="details">
       <div class="row gx-3">
         <div class="col">
          <div class="p-3 border bg-light"><a href="{{url_for('view_details',user_name=d['username'])}}"><b>{{d['username']}}</b></a></div>
         </div>
-        <div class="col">
+        <!-- <div class="col">
           <div class="p-3 border bg-light"><b>Good</b></div>
         </div>
         <div class="col">
           <div class="p-3 border bg-light"><input type="checkbox"></input></div>
-         </div>
+         </div> -->
       </div>
     </div>
+    {% endif %}
     {% endfor %}
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
